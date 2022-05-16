@@ -46,6 +46,7 @@ let config = {
         dest: '/assets/img/svg'
     },
     css: {
+        gridCss: 'assets/css',
         src: 'assets/css/styles.less',
         watch: 'assets/css/**/*.less',
         dest: '/assets/css'
@@ -160,17 +161,17 @@ function css() {
 function grid(done) {
 
     let gridSettings = {
-        columns: 24,
-        offset: "10px",
+        columns: 12,
+        offset: "8px",
         //offset: "1.8%",
         container: {
-            maxWidth: "922px",
-            fields: "30px"
+            maxWidth: "1380px"
+            //fields: "30px"
         },
         breakPoints: {
             md: {
-                width: "992px",
-                fields: "15px"
+                width: "992px"
+                //fields: "15px"
             },
             sm: {
                 width: "720px"
@@ -184,7 +185,8 @@ function grid(done) {
         }
     }
 
-    smartGrid(config.src + 'css', gridSettings);
+    //smartGrid(config.src + 'css', gridSettings);
+    smartGrid(config.src + config.css.gridCss, gridSettings);
     done();
 }
 

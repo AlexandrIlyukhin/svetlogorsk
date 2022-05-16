@@ -1,4 +1,4 @@
-@columns: 24;
+@columns: 12;
 @atom: (100% / @columns);
 
 @break_md: 992px;
@@ -6,7 +6,7 @@
 @break_xs: 576px;
 @break_xxs: 400px;
 
-@offset: 10px;
+@offset: 8px;
 @offset_md: @offset;
 @offset_sm: @offset;
 @offset_xs: @offset;
@@ -19,16 +19,10 @@
 @offset_xxs_one_side: (@offset_xxs / 2);
 
 @fields: 30px;
-@fields_md: 15px;
 
 .wrapper-full(){
     padding-left: @fields;
     padding-right: @fields;
-
-    .md-block({
-        padding-left: @fields_md;
-        padding-right: @fields_md;
-    });
 }
 
 .row-offsets(){
@@ -42,7 +36,7 @@
 }
 
 .wrapper(){
-    max-width: 922px;
+    max-width: 1380px;
     margin: 0 auto;
     .wrapper-full();
 }
