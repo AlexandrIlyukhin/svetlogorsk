@@ -35,14 +35,19 @@ srcset="https://via.placeholder.com/800x250 2x, https://via.placeholder.com/450x
         <!-- Вложенный блок `logo` -->
         <div class="header__logo">Илюхин и К</div>
 
-        <nav class="header__chapters">
-            <ul>
-                <li><a href="#">Главная</a></li>
-                <li><a href="#">Новости</a></li>
-                <li><a href="#">Каталог</a></li>
-            </ul>
-        </nav>
-
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox"/>
+            <label class="menu__btn" for="menu__toggle">
+                <span></span>
+            </label>
+            <nav class="header__chapters">
+                <ul class="menu__box">
+                    <li><a class="menu__item" href="#">Главная</a></li>
+                    <li><a class="menu__item" href="#">Новости</a></li>
+                    <li><a class="menu__item" href="#">Каталог</a></li>
+                </ul>
+            </nav>
+        </div>
         <p class="header__button">Вход</p>
     </div>
 
