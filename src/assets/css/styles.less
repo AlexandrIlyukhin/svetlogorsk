@@ -11,13 +11,85 @@ html {
   position: relative;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .header {
   background: #cbb6b6;
+  position: relative;
+
+  .headerNavigation__btn {
+    cursor: pointer;
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    display: none;
+    .sm-block({
+      display: block;
+    });
+
+    .hamb-line {
+      //background: @color_black;
+      display: block;
+      height: 2px;
+      position: relative;
+      width: 24px;
+    }
+    .hamb-line::before,
+    .hamb-line::after {
+      background: @color_black;
+      content: '';
+      display: block;
+      height: 100%;
+      position: absolute;
+      transition: all .2s ease-out;
+      width: 100%;
+    }
+
+  }
 }
+
+.toggleBtnSt {
+  .hamb-line {
+    background: @color_black;
+  }
+
+  .hamb-line::before {
+    top: 5px;
+  }
+
+  .hamb-line::after {
+    top: -5px;
+  }
+}
+
+
+.toggleBtn {
+  .hamb-line {
+    background: transparent;
+  }
+
+  .hamb-line::before {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+
+  .hamb-line::after {
+    transform: rotate(45deg);
+    top: 0;
+  }
+}
+
 
 .header-nav {
   .wrapper();
-  //.row-flex();
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,47 +97,49 @@ html {
 }
 
 .header-nav {
-
   .header__logo {
     font-size: 1.9rem;
     letter-spacing: -1.9px;
-    //text-transform: uppercase;
     font-family: 'Lato', 'Arial', sans-serif;
     font-weight: bold;
     font-style: normal;
+    color: @color_black;
     //text-align: center;
     padding-top: 16px;
     padding-bottom: 16px;
   }
-// навигация 
-  .header__chapters {
 
-    ul {
+  // навигация
+  .headerNavigation {
+
+    .toggleMenu {
       display: flex;
-      flex-direction: row;
-      justify-content: space-around;
+      flex-wrap: wrap;
+
+      &__item {
+        word-break: break-word;
+        font-size: 12px;
+        //display: block;
+        display: inline-block;
+        font-family: 'Lato', 'Arial', sans-serif;
+        text-transform: uppercase;
+        color: @color_black;
+        font-weight: bold;
+        font-style: normal;
+        text-align: center;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
     }
 
-    li {
-      display: block;
-    }
 
-    a {
-      display: block;
-      text-decoration: none;
-      font-family: 'Lato', 'Arial', sans-serif;
-      font-weight: normal;
-      font-style: normal;
-      text-align: center;
-      padding-left: 20px;
-      padding-right: 20px;
-    }
   }
 
   //Кнопка входа
   .header__button {
     font-family: 'Lato', 'Arial', sans-serif;
     font-weight: normal;
+    color: @color_black;
     font-style: normal;
     text-align: center;
   }
