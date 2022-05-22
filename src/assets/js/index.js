@@ -1,19 +1,13 @@
 import $ from 'jquery';
-/*
-
-let $headBtn = $('.headerNavigation__btn');
-
-$headBtn.on('click', function (){
-
-});
-*/
 
 const $headBtn = $('.headerNavigation__btn');
-
-$headBtn.on('click', function (){
-    $headBtn.toggleClass('toggleBtn','toggleBtnSt');
-    //$headBtn.removeClass('toggleBtnSt').addClass('toggleBtn');
+const $toggleMenu = $(".toggleMenu");
+$headBtn.on('click', function () {
+    $headBtn.toggleClass('toggleBtn', 'toggleBtnSt');
+    //$toggleMenu.slideToggle(300);
+    $toggleMenu.toggleClass('menu_active', 'menu_closed');
 
 })
 
-//$headBtn.toggleClass('.toggleBtn','.toggleBtnSt');
+
+

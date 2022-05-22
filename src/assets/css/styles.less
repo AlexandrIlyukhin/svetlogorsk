@@ -42,6 +42,7 @@ a {
       position: relative;
       width: 24px;
     }
+
     .hamb-line::before,
     .hamb-line::after {
       background: @color_black;
@@ -52,7 +53,6 @@ a {
       transition: all .2s ease-out;
       width: 100%;
     }
-
   }
 }
 
@@ -69,7 +69,6 @@ a {
     top: -5px;
   }
 }
-
 
 .toggleBtn {
   .hamb-line {
@@ -93,7 +92,6 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .header-nav {
@@ -111,10 +109,27 @@ a {
 
   // навигация
   .headerNavigation {
+    .sm-block({
+      //position: relative;
+      overflow-x: hidden;
+    });
 
     .toggleMenu {
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
+      .sm-block({
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        box-sizing: border-box;
+        align-items: center;
+        min-height: 53px;
+        background: rgba(117, 112, 112, 0.11);
+        transition: 0.5s;
+
+      });
 
       &__item {
         word-break: break-word;
@@ -132,7 +147,14 @@ a {
       }
     }
 
+  }
 
+  .menu_closed {
+    transform: translateX(-100%);
+  }
+
+  .menu_active {
+    transform: translateX(0%);
   }
 
   //Кнопка входа
