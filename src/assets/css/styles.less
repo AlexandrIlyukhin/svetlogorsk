@@ -17,7 +17,7 @@ a {
 }
 
 .header {
-  background: #cbb6b6;
+  //background: #cbb6b6;
   position: relative;
 
   .headerNavigation__btn {
@@ -33,6 +33,10 @@ a {
     display: none;
     .sm-block({
       display: block;
+    });
+
+    .xs-block({
+      left: 40%;
     });
 
     .hamb-line {
@@ -102,71 +106,78 @@ a {
     font-weight: bold;
     font-style: normal;
     color: @color_black;
-    //text-align: center;
     padding-top: 16px;
     padding-bottom: 16px;
   }
 
   // навигация
   .headerNavigation {
-    .sm-block({
-      //position: relative;
-      overflow-x: hidden;
-    });
-
-    .toggleMenu {
+    .toggleMenu__d {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
       .sm-block({
-        width: 100%;
-        position: absolute;
-        left: 0;
-        top: 100%;
-        box-sizing: border-box;
-        align-items: center;
-        min-height: 53px;
-        background: rgba(117, 112, 112, 0.11);
-        transition: 0.5s;
+        display: none;
+      });
+    }
 
+    .toggleMenu {
+      align-items: center;
+      color: @color_black;
+
+      .sm-block({
+        background: @color_rbga;
       });
 
       &__item {
         word-break: break-word;
         font-size: 12px;
-        //display: block;
         display: inline-block;
         font-family: 'Lato', 'Arial', sans-serif;
         text-transform: uppercase;
-        color: @color_black;
-        font-weight: bold;
+        font-weight: normal;
         font-style: normal;
         text-align: center;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding: 15px 20px;
+        .sm-block({
+          display: block;
+          border-bottom: 1px solid @color_black;
+          text-align: left;
+          &:first-child {
+            padding-left: 30px;
+          }
+        });
       }
     }
-
   }
 
-  .menu_closed {
-    transform: translateX(-100%);
-  }
-
-  .menu_active {
-    transform: translateX(0%);
+  .toggleTarget {
+    .sm-block({
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      box-sizing: border-box;
+      background: #fff;
+      z-index: 40;
+    });
   }
 
   //Кнопка входа
   .header__button {
+    cursor: pointer;
+    display: block;
+    font-size: 12px;
     font-family: 'Lato', 'Arial', sans-serif;
     font-weight: normal;
     color: @color_black;
+
     font-style: normal;
     text-align: center;
+    background: @color_rbga;
+    text-transform: uppercase;
+    padding: 10px 16px;
+    border-radius: 3px;
   }
-
-
 }
 
 
