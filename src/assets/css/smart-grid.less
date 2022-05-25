@@ -3,18 +3,21 @@
 
 @break_md: 992px;
 @break_sm: 720px;
+@break_mx: 646px;
 @break_xs: 576px;
 @break_xxs: 400px;
 
 @offset: 8px;
 @offset_md: @offset;
 @offset_sm: @offset;
+@offset_mx: @offset;
 @offset_xs: @offset;
 @offset_xxs: @offset;
 
 @offset_one_side: (@offset / 2);
 @offset_md_one_side: (@offset_md / 2);
 @offset_sm_one_side: (@offset_sm / 2);
+@offset_mx_one_side: (@offset_mx / 2);
 @offset_xs_one_side: (@offset_xs / 2);
 @offset_xxs_one_side: (@offset_xxs / 2);
 
@@ -89,6 +92,11 @@
 .size-sm(@n){
     @val: 100% / @columns * @n;
     .sm(width, ~"calc(@{val} - @{offset_sm})");
+}
+
+.size-mx(@n){
+    @val: 100% / @columns * @n;
+    .mx(width, ~"calc(@{val} - @{offset_mx})");
 }
 
 .size-xs(@n){
@@ -197,6 +205,38 @@
     .sm(padding-right, ~"calc(@{val} + @{offset_sm_one_side})");
 }
 
+.shift-mx(@n){
+    @val: 100% / @columns * @n;
+    .mx(margin-left, ~"calc(@{val} + @{offset_mx_one_side})");
+    .mx(margin-right, ~"calc(@{val} + @{offset_mx_one_side})");
+}
+
+.shift-mx-left(@n){
+    @val: 100% / @columns * @n;
+    .mx(margin-left, ~"calc(@{val} + @{offset_mx_one_side})");
+}
+
+.shift-mx-right(@n){
+    @val: 100% / @columns * @n;
+    .mx(margin-right, ~"calc(@{val} + @{offset_mx_one_side})");
+}
+
+.shift-mx-padding(@n){
+    @val: 100% / @columns * @n;
+    .mx(padding-left, ~"calc(@{val} + @{offset_mx_one_side})");
+    .mx(padding-right, ~"calc(@{val} + @{offset_mx_one_side})");
+}
+
+.shift-mx-padding-left(@n){
+    @val: 100% / @columns * @n;
+    .mx(padding-left, ~"calc(@{val} + @{offset_mx_one_side})");
+}
+
+.shift-mx-padding-right(@n){
+    @val: 100% / @columns * @n;
+    .mx(padding-right, ~"calc(@{val} + @{offset_mx_one_side})");
+}
+
 .shift-xs(@n){
     @val: 100% / @columns * @n;
     .xs(margin-left, ~"calc(@{val} + @{offset_xs_one_side})");
@@ -281,6 +321,18 @@
 
 .sm-block(@content){
     @media screen and (max-width: @break_sm){
+        @content();
+    }
+}
+
+.mx(@name, @value){
+    @media screen and (max-width: @break_mx){
+        @{name}: @value;
+    }
+}
+
+.mx-block(@content){
+    @media screen and (max-width: @break_mx){
         @content();
     }
 }

@@ -176,6 +176,9 @@ function grid(done) {
             sm: {
                 width: "720px"
             },
+            mx: {
+                width: "646px"
+            },
             xs: {
                 width: "576px"
             },
